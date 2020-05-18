@@ -1,10 +1,8 @@
 window.onload = fetchData;
 window.onkeyup = keyup;
 
-
 const add = document.getElementById("add");
 const input = document.getElementById("input");
-
 
 var arr = [
   { task: "wash your hands", completed: true },
@@ -12,7 +10,7 @@ var arr = [
   { task: "wash your hands", completed: true },
 ];
 
-const arrSize = arr.size;
+const arrSize = arr.length;
 
 function fetchData() {
   arr.forEach((item) => {
@@ -35,7 +33,6 @@ const addTasksToUi = (item, status) => {
   label.setAttribute("for", `${count}`);
   const span = document.createElement("span");
   span.setAttribute("onclick", "strike(event)");
-  // else span.setAttribute("style", "text-decoration: none;");
   span.appendChild(document.createTextNode(item));
   const img = document.createElement("img");
   img.setAttribute("src", "./assets/bin.svg");
@@ -49,7 +46,10 @@ const addTasksToUi = (item, status) => {
   li.appendChild(img1);
   // li.appendChild(document.createTextNode(item));
   ul.appendChild(li);
-  arr.push({ task: `${item}`, completed: false });
+
+  if (count >= arrSize) {
+    arr.push({ task: `${item}`, completed: false });
+  }
   if (status == true) {
     span.setAttribute("style", "text-decoration: line-through;");
     document.getElementById(count).checked = true;
@@ -89,8 +89,6 @@ function strike(event) {
     document.getElementById(id).checked = true;
     changeStatus(id, "completed");
   }
-  // const ul = document.getElementById("dynamic-list");
-  // ul.removeChild(target);
 }
 
 function check() {
@@ -127,7 +125,6 @@ function changeStatus(id, status) {
   else {
     arr[id].completed = false;
   }
-  console.log(arr)
 }
 
 function scrollChecker() {
