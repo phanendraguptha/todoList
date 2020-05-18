@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
   <link rel="stylesheet" href="./style.css">
   <title>Todo List</title>
 </head>
+
 <body>
   <h2>TODO LIST</h2>
   <div class="inputDiv">
@@ -16,15 +18,13 @@
     </button>
   </div>
   <div class="container">
-    <ul id="dynamic-list" onclick="strike(event)">
-      <li class="list-item" value="wash your hands"> <input type="checkbox" id="check1"> <label for="check1"></label> <span>Wash your hands</span> <img class="bin" src="./assets/bin.svg" alt=""> <img class="edit" src="./assets/edit.svg" alt="">
-      </li>
-      <li class="list-item"> <input type="checkbox" id="check2"> <label for="check2"></label> <span>Check new todo tutorial</span> <img src="./assets/bin.svg" alt=""> <img src="./assets/edit.svg" alt=""> </li>
-      <li> <input type="checkbox" id="check3"> <label for="check3"></label> <span>Wash your hands</span> <img src="./assets/bin.svg" alt=""> <img src="./assets/edit.svg" alt=""></li>
-    </ul>    
+    <ul id="dynamic-list" onclick="strike(e)">
+
+    </ul>
   </div>
   <script defer src="./script.js"></script>
 </body>
+
 </html>
 
 <!-- https://memorynotfound.com/dynamically-addremove-items-list-javascript/
