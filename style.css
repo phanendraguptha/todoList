@@ -11,6 +11,7 @@ html{
   --scroll: #BCC0C4;
   background-image: url(./images/custom\ –\ 1.png);
   background-size: cover;
+  background-repeat: no-repeat;
 }
 h2{
   margin: 90px 0px 45px 0px;
