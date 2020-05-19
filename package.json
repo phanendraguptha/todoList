@@ -1,0 +1,23 @@
+{
+  "name": "todoList",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "deploy": "gh-pages -d dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/phanendraguptha/todoList.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/phanendraguptha/todoList/issues"
+  },
+  "homepage": "https://phanendraguptha.github.io/todoList/",
+  "dependencies": {
+    "gh-pages": "^2.2.0"
+  }
+}
