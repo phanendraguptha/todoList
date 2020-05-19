@@ -125,6 +125,7 @@ function removeTask(event) {
   ul.removeChild(li);
   arr.splice(id, 1);
   updLocalStorage();
+  window.location.reload(true);
 }
 
 // helper functions
