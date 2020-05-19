@@ -4,18 +4,25 @@ window.onkeyup = keyup;
 const add = document.getElementById("add");
 const input = document.getElementById("input");
 
-var arr = [
-  { task: "wash your hands", completed: true },
-  { task: "check out new todo tutorial", completed: false },
-  { task: "wash your hands", completed: true },
-];
+// var arr = [
+//   { task: "wash your hands", completed: true },
+//   { task: "check out new todo tutorial", completed: false },
+//   { task: "wash your hands", completed: true },
+// ];
+if (JSON.parse(localStorage.getItem("tasks")) == null) {
+  var arr = [];
+  updLocalStorage();
+}
+var arr = JSON.parse(localStorage.getItem("tasks"));
 
 const arrSize = arr.length;
 
 function fetchData() {
-  arr.forEach((item) => {
-    addTasksToUi(item.task, item.completed);
-  });
+  if (arr !== null) {
+    arr.forEach((item) => {
+      addTasksToUi(item.task, item.completed);
+    });
+  }
 }
 
 var count = 0;
@@ -49,6 +56,7 @@ const addTasksToUi = (item, status) => {
 
   if (count >= arrSize) {
     arr.push({ task: `${item}`, completed: false });
+    updLocalStorage();
   }
   if (status == true) {
     span.setAttribute("style", "text-decoration: line-through;");
@@ -116,14 +124,19 @@ function removeTask(event) {
   const li = event.target.parentNode;
   ul.removeChild(li);
   arr.splice(id, 1);
+  updLocalStorage();
 }
+
+// helper functions
 
 function changeStatus(id, status) {
   if (status == "completed") {
     arr[id].completed = true;
+    updLocalStorage();
   }
   else {
     arr[id].completed = false;
+    updLocalStorage();
   }
 }
 
@@ -135,6 +148,10 @@ function scrollChecker() {
   } else {
     container.setAttribute("style", "height: 250px;");
   }
+}
+
+function updLocalStorage() {
+  localStorage.setItem("tasks", JSON.stringify(arr));
 }
 
 
