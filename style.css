@@ -131,3 +131,46 @@ input[type=checkbox]:checked + *:before {
   , inset 0px 0px 0px .14em white;
   background-color: var(--main-color);
 }
+@media (max-width:768px){  
+  .container{
+    width: 650px;
+  }
+}
+@media (max-width:576px){
+  html{
+    background-image: url(./images/mob.png);
+  }
+  h2{
+    font-size: 35px;
+  }
+  #input{
+    font-size: 20px;
+    width: 200px;
+    padding: 0px 18px;
+  }
+  #add{
+    margin-left: 15px;
+    padding: 11px;
+    width: 70px;
+    border-radius: 23px;
+  }
+  .plus{  
+    width: 32px;
+  }
+  .container{
+    width: 255px;
+    height: 212px;
+  }
+  li{
+    margin: 16px 15px;
+    font-size: 18px;
+  }
+  span{
+    margin-left: 10px;
+    overflow: scroll;
+  }
+  li img{
+    width: 20px;
+    margin: 0px 5px;
+  }
+}
