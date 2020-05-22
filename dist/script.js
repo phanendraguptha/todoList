@@ -74,7 +74,9 @@ function keyup(e) {
 }
 
 add.onclick = () => {
-  addTasksToUi(input.value, false);
+  if (input.value !== '') {
+    addTasksToUi(input.value, false);
+  }
 };
 
 function strike(event) {
