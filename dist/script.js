@@ -68,13 +68,13 @@ const addTasksToUi = (item, status) => {
 };
 
 function keyup(e) {
-  if (e.keyCode == 13 && input.value !== '') {
+  if (e.keyCode == 13 && input.value !== "") {
     addTasksToUi(input.value, false);
   }
 }
 
 add.onclick = () => {
-  if (input.value !== '') {
+  if (input.value !== "") {
     addTasksToUi(input.value, false);
   }
 };
@@ -88,13 +88,11 @@ function strike(event) {
     target.setAttribute("style", "text-decoration: line-through;");
     document.getElementById(id).checked = true;
     changeStatus(id, "completed");
-  }
-  else if (targetStyle == "text-decoration: line-through;") {
+  } else if (targetStyle == "text-decoration: line-through;") {
     target.setAttribute("style", "text-decoration: none;");
     document.getElementById(id).checked = false;
     changeStatus(id, "notCompleted");
-  }
-  else if (targetStyle == "text-decoration: none;") {
+  } else if (targetStyle == "text-decoration: none;") {
     target.setAttribute("style", "text-decoration: line-through;");
     document.getElementById(id).checked = true;
     changeStatus(id, "completed");
@@ -107,13 +105,11 @@ function check() {
     span.setAttribute("style", "text-decoration: line-through;");
     const id = event.target.parentNode.children[0].id;
     changeStatus(id, "completed");
-  }
-  else if (span.getAttribute("style") == "text-decoration: line-through;") {
+  } else if (span.getAttribute("style") == "text-decoration: line-through;") {
     span.setAttribute("style", "text-decoration: none;");
     const id = event.target.parentNode.children[0].id;
     changeStatus(id, "notCompleted");
-  }
-  else if (span.getAttribute("style") == "text-decoration: none;") {
+  } else if (span.getAttribute("style") == "text-decoration: none;") {
     span.setAttribute("style", "text-decoration: line-through;");
     const id = event.target.parentNode.children[0].id;
     changeStatus(id, "completed");
@@ -136,8 +132,7 @@ function changeStatus(id, status) {
   if (status == "completed") {
     arr[id].completed = true;
     updLocalStorage();
-  }
-  else {
+  } else {
     arr[id].completed = false;
     updLocalStorage();
   }
@@ -156,7 +151,5 @@ function scrollChecker() {
 function updLocalStorage() {
   localStorage.setItem("tasks", JSON.stringify(arr));
 }
-
-
 
 // const task = `<li> <input type="checkbox" id=${count}> <label for=${count}></label> <span>${item}</span> <img src="./assets/bin.svg" alt="bin"> <img src="./assets/edit.svg" alt="edit"></li>`;
